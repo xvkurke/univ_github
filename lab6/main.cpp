@@ -16,12 +16,10 @@ class Wood : public Plant {
 private:
 	string wood_type;
 public:
-	Wood() {
-		this->setPlantType("Wood");
+	Wood() : Plant("Wood") {
 		this->wood_type = "None";
 	}
-	Wood(string type) {
-		this->setPlantType("Wood");
+	Wood(string type) : Plant("Wood") {
 		this->wood_type = type;
 	}
 	void setWoodType(string type) { this->wood_type = type; }
@@ -32,13 +30,11 @@ class Reed : public Plant {
 private:
 	string reed_type;
 public:
-	Reed() {
+	Reed() : Plant("Reed") {
 		this->reed_type = "None";
-		this->setPlantType("Reed");
 	}
-	Reed(string type) {
+	Reed(string type) : Plant("Reed") {
 		this->reed_type = type;
-		this->setPlantType("Reed");
 	}
 	void setReedType(string type) { this->reed_type = type; }
 	string getReedType() { return this->reed_type; }
@@ -48,13 +44,11 @@ class Oak : public Wood {
 private:
 	string oak_type;
 public:
-	Oak() {
+	Oak() : Wood("Oak") {
 		this->oak_type = "None";
-		this->setWoodType("Oak");
 	}
-	Oak(string type) {
+	Oak(string type) : Wood("Oak") {
 		this->oak_type = type;
-		this->setWoodType("Oak");
 	}
 	void setOakType(string type) { this->oak_type = type; }
 	string getOakType() { return this->oak_type; }
